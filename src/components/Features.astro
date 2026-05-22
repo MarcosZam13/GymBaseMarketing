@@ -1,0 +1,59 @@
+---
+const features = [
+  {
+    icon: '👥',
+    title: 'Gestión de miembros',
+    desc: 'Registrá, editá y monitoreá todos tus miembros desde un solo panel centralizado.',
+  },
+  {
+    icon: '💳',
+    title: 'Control de pagos',
+    desc: 'Llevá el registro de mensualidades, fechas de vencimiento y morosidad automáticamente.',
+  },
+  {
+    icon: '🏋️',
+    title: 'Rutinas personalizadas',
+    desc: 'Asigná planes de entrenamiento a cada miembro según sus objetivos específicos.',
+  },
+  {
+    icon: '✅',
+    title: 'Check-in digital',
+    desc: 'Control de entrada sin papel. Cada visita queda registrada automáticamente por QR.',
+  },
+  {
+    icon: '📊',
+    title: 'Reportes y estadísticas',
+    desc: 'Visualizá el crecimiento de tu gimnasio con métricas en tiempo real.',
+  },
+  {
+    icon: '📱',
+    title: 'Acceso para miembros',
+    desc: 'Tus clientes pueden ver sus rutinas y pagos desde su celular sin instalar nada.',
+  },
+];
+---
+
+<section id="caracteristicas" class="py-24 border-t border-[#1f1f1f]">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="mb-16">
+      <p class="text-[#FF5E14] text-sm font-semibold uppercase tracking-widest mb-3">Características</p>
+      <h2 class="font-heading font-black text-5xl md:text-6xl uppercase leading-tight max-w-xl">
+        Todo lo que necesita tu negocio
+      </h2>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1f1f1f]">
+      {features.map((f, i) => (
+        <div class="bg-[#080808] p-8 hover:bg-[#111111] transition-colors group">
+          <div class="text-3xl mb-4">{f.icon}</div>
+          <h3 class="font-heading font-bold text-xl uppercase mb-3 group-hover:text-[#FF5E14] transition-colors">
+            {f.title}
+          </h3>
+          <p class="text-[#a0a0a0] text-sm leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

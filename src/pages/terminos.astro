@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Términos y Condiciones — GymBase">
+  <Navbar />
+
+  <main class="pt-32 pb-24 min-h-screen">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="text-[#FF5E14] text-xs font-semibold uppercase tracking-widest mb-3">Legal</p>
+      <h1 class="font-heading font-black text-4xl md:text-5xl uppercase mb-2">Términos y Condiciones de Uso</h1>
+      <p class="text-[#a0a0a0] text-sm mb-10">Última actualización: 22/05/2026</p>
+
+      <div class="prose-custom">
+        <p class="text-[#a0a0a0] text-sm mb-8">
+          <strong class="text-white">Prestador del servicio:</strong><br />
+          Marcos Zamora Sánchez<br />
+          Cédula de identidad: 2-0860-0414<br />
+          Correo electrónico: contacto@gymbase.fit<br />
+          Instagram: @[GYMBASE_INSTAGRAM]
+        </p>
+
+        {[
+          {
+            num: '1',
+            title: 'OBJETO DEL SERVICIO',
+            body: 'GymBase es una plataforma de software como servicio (SaaS) orientada a la gestión integral de gimnasios y entrenadores personales. El servicio incluye módulos de gestión de miembros, control de pagos, asignación de rutinas, registro de check-ins y generación de reportes.',
+          },
+          {
+            num: '2',
+            title: 'ACEPTACIÓN DE LOS TÉRMINOS',
+            body: 'Al completar el formulario de contacto y marcar la casilla de aceptación, el cliente declara haber leído, comprendido y aceptado la totalidad de estos Términos y Condiciones, así como el Contrato de Servicio vigente.',
+          },
+          {
+            num: '3',
+            title: 'PLANES Y PRECIOS',
+            body: 'Los precios vigentes son:\n— Plan Gimnasio: ₡50,000 colones costarricenses por mes\n— Plan Entrenador Personal: ₡25,000 colones costarricenses por mes\nLos precios podrán ser modificados con un aviso previo de 30 días naturales al cliente.',
+          },
+          {
+            num: '4',
+            title: 'FACTURACIÓN Y PAGO',
+            body: 'El pago se realiza de forma mensual anticipada mediante los medios acordados entre las partes. La falta de pago en la fecha acordada podrá resultar en la suspensión temporal del acceso al servicio.',
+          },
+          {
+            num: '5',
+            title: 'CANCELACIÓN',
+            body: 'El cliente podrá cancelar el servicio en cualquier momento mediante comunicación escrita con al menos 5 días hábiles de anticipación al siguiente período de facturación. No se realizan reembolsos por períodos ya pagados.',
+          },
+          {
+            num: '6',
+            title: 'PROPIEDAD DE LOS DATOS',
+            body: 'Los datos ingresados por el cliente (miembros, pagos, rutinas, etc.) son de exclusiva propiedad del cliente. Marcos Zamora Sánchez no comercializará ni cederá dichos datos a terceros.',
+          },
+          {
+            num: '7',
+            title: 'DISPONIBILIDAD DEL SERVICIO',
+            body: 'Se procurará mantener el servicio disponible de forma continua. No obstante, podrán existir interrupciones por mantenimiento programado o causas de fuerza mayor, sin que esto genere derecho a compensación.',
+          },
+          {
+            num: '8',
+            title: 'LIMITACIÓN DE RESPONSABILIDAD',
+            body: 'El prestador del servicio no será responsable por pérdidas de negocio, lucro cesante o daños indirectos derivados del uso o imposibilidad de uso de la plataforma.',
+          },
+          {
+            num: '9',
+            title: 'LEGISLACIÓN APLICABLE',
+            body: 'Estos términos se rigen por las leyes de la República de Costa Rica. Cualquier disputa se someterá a la jurisdicción de los tribunales competentes de Costa Rica.',
+          },
+          {
+            num: '10',
+            title: 'MODIFICACIONES',
+            body: 'Estos términos podrán ser modificados en cualquier momento. Se notificará a los clientes activos con al menos 15 días de anticipación.',
+          },
+        ].map(section => (
+          <div class="mb-8 border-l-2 border-[#1f1f1f] pl-6">
+            <h2 class="font-heading font-bold text-lg uppercase mb-2">
+              {section.num}. {section.title}
+            </h2>
+            <p class="text-[#a0a0a0] text-sm leading-relaxed whitespace-pre-line">{section.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

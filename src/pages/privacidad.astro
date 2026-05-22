@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Política de Privacidad — GymBase">
+  <Navbar />
+
+  <main class="pt-32 pb-24 min-h-screen">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="text-[#FF5E14] text-xs font-semibold uppercase tracking-widest mb-3">Legal</p>
+      <h1 class="font-heading font-black text-4xl md:text-5xl uppercase mb-2">Política de Privacidad</h1>
+      <p class="text-[#a0a0a0] text-sm mb-4">Última actualización: 22/05/2026</p>
+      <p class="text-[#a0a0a0] text-sm mb-10">
+        <strong class="text-white">Responsable del tratamiento:</strong><br />
+        Marcos Zamora Sánchez, cédula 2-0860-0414
+      </p>
+
+      {[
+        {
+          num: '1',
+          title: 'DATOS QUE RECOPILAMOS',
+          body: 'Recopilamos la información que el cliente ingresa directamente: nombre, correo electrónico, teléfono, nombre del establecimiento y datos de los miembros del gimnasio (nombre, contacto, plan, historial de pagos).',
+        },
+        {
+          num: '2',
+          title: 'USO DE LOS DATOS',
+          body: 'Los datos se utilizan exclusivamente para la prestación del servicio contratado. No se utilizan con fines publicitarios ni se venden a terceros.',
+        },
+        {
+          num: '3',
+          title: 'ALMACENAMIENTO Y SEGURIDAD',
+          body: 'Los datos se almacenan en servidores seguros con encriptación en tránsito y en reposo. El acceso está restringido únicamente al personal autorizado.',
+        },
+        {
+          num: '4',
+          title: 'DERECHOS DEL TITULAR',
+          body: 'El cliente podrá solicitar en cualquier momento el acceso, rectificación, cancelación u oposición al tratamiento de sus datos mediante comunicación a contacto@gymbase.fit.',
+        },
+        {
+          num: '5',
+          title: 'COOKIES',
+          body: 'Este sitio web de presentación no utiliza cookies de rastreo ni publicidad. Únicamente cookies técnicas necesarias para el funcionamiento del formulario de contacto.',
+        },
+        {
+          num: '6',
+          title: 'LEGISLACIÓN APLICABLE',
+          body: 'Esta política se rige por la Ley N° 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales de Costa Rica.',
+        },
+      ].map(section => (
+        <div class="mb-8 border-l-2 border-[#1f1f1f] pl-6">
+          <h2 class="font-heading font-bold text-lg uppercase mb-2">
+            {section.num}. {section.title}
+          </h2>
+          <p class="text-[#a0a0a0] text-sm leading-relaxed">{section.body}</p>
+        </div>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

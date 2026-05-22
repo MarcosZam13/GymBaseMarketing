@@ -1,0 +1,53 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Nos contactás',
+    desc: 'Llenás el formulario y te mostramos una demo en vivo del sistema. Sin compromisos.',
+  },
+  {
+    num: '02',
+    title: 'Configuramos tu gimnasio',
+    desc: 'Cargamos tu información, membresías y miembros en menos de 48 horas. Personalizamos el sistema con los colores y la marca de tu negocio.',
+  },
+  {
+    num: '03',
+    title: 'Empezás a operar',
+    desc: 'Tu equipo y tus miembros tienen acceso inmediato desde cualquier dispositivo con internet.',
+  },
+];
+---
+
+<section id="como-funciona" class="py-24 bg-[#080808]">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="mb-16">
+      <p class="text-[#FF5E14] text-sm font-semibold uppercase tracking-widest mb-3">Proceso</p>
+      <h2 class="font-heading font-black text-5xl md:text-6xl uppercase leading-tight max-w-xl">
+        Empezar es más fácil de lo que pensás
+      </h2>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-0">
+      {steps.map((step, i) => (
+        <div class="flex flex-col">
+          <!-- Number + line -->
+          <div class="flex items-center mb-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#FF5E14]/10 border border-[#FF5E14]/20 flex items-center justify-center">
+              <span class="font-heading font-black text-3xl text-[#FF5E14]">{step.num}</span>
+            </div>
+            {i < steps.length - 1 && (
+              <div class="hidden md:block flex-1 h-px bg-[#1f1f1f] mx-4"></div>
+            )}
+          </div>
+          <!-- Text -->
+          <div class="pr-8">
+            <h3 class="font-heading font-bold text-2xl uppercase mb-3">{step.title}</h3>
+            <p class="text-[#a0a0a0] leading-relaxed text-sm">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

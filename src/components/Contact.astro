@@ -1,0 +1,190 @@
+---
+---
+
+<section id="contacto" class="py-24 border-t border-[#1f1f1f] bg-[#080808]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Left: copy -->
+      <div>
+        <p class="text-[#FF5E14] text-sm font-semibold uppercase tracking-widest mb-3">Contacto</p>
+        <h2 class="font-heading font-black text-5xl md:text-6xl uppercase leading-tight mb-6">
+          ¿Listo para<br />modernizar tu<br />
+          <span class="text-[#FF5E14]">gimnasio?</span>
+        </h2>
+        <p class="text-[#a0a0a0] leading-relaxed mb-8">
+          Completá el formulario y te contactamos en menos de 48 horas.
+        </p>
+
+        <!-- Secondary channel -->
+        <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-6">
+          <p class="text-sm text-[#a0a0a0] mb-2">También podés escribirnos directo a Instagram:</p>
+          <a
+            href="https://instagram.com/[GYMBASE_INSTAGRAM]"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 text-[#FF5E14] font-semibold hover:underline"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @[GYMBASE_INSTAGRAM]
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div>
+        <form id="contact-form" class="flex flex-col gap-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-[#a0a0a0] mb-2">
+                Nombre completo <span class="text-[#FF5E14]">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full bg-[#111111] border border-[#1f1f1f] focus:border-[#FF5E14]/60 rounded px-4 py-3 text-sm outline-none transition-colors placeholder-[#404040]"
+                placeholder="Juan Pérez"
+              />
+            </div>
+            <div>
+              <label for="gym" class="block text-xs font-semibold uppercase tracking-wider text-[#a0a0a0] mb-2">
+                Nombre del gimnasio <span class="text-[#FF5E14]">*</span>
+              </label>
+              <input
+                type="text"
+                id="gym"
+                name="gym"
+                required
+                class="w-full bg-[#111111] border border-[#1f1f1f] focus:border-[#FF5E14]/60 rounded px-4 py-3 text-sm outline-none transition-colors placeholder-[#404040]"
+                placeholder="Iron Gym"
+              />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-[#a0a0a0] mb-2">
+                WhatsApp / Teléfono <span class="text-[#FF5E14]">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full bg-[#111111] border border-[#1f1f1f] focus:border-[#FF5E14]/60 rounded px-4 py-3 text-sm outline-none transition-colors placeholder-[#404040]"
+                placeholder="+506 8888-8888"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-[#a0a0a0] mb-2">
+                Correo electrónico <span class="text-[#FF5E14]">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full bg-[#111111] border border-[#1f1f1f] focus:border-[#FF5E14]/60 rounded px-4 py-3 text-sm outline-none transition-colors placeholder-[#404040]"
+                placeholder="juan@mygym.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-[#a0a0a0] mb-2">
+              Mensaje / consulta
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full bg-[#111111] border border-[#1f1f1f] focus:border-[#FF5E14]/60 rounded px-4 py-3 text-sm outline-none transition-colors resize-none placeholder-[#404040]"
+              placeholder="Contanos sobre tu gimnasio, cuántos miembros tienen, qué necesitás..."
+            ></textarea>
+          </div>
+
+          <!-- Checkbox -->
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input
+              type="checkbox"
+              name="terms"
+              id="terms"
+              required
+              class="mt-0.5 w-4 h-4 accent-[#FF5E14] flex-shrink-0"
+            />
+            <span class="text-xs text-[#a0a0a0] leading-relaxed">
+              He leído y acepto los{' '}
+              <a href="/terminos" target="_blank" class="text-[#FF5E14] hover:underline">Términos y condiciones</a>
+              {' '}y el{' '}
+              <a href="/contrato" target="_blank" class="text-[#FF5E14] hover:underline">Contrato de servicio</a>
+            </span>
+          </label>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="bg-[#FF5E14] hover:bg-[#e54d0a] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded transition-colors"
+          >
+            Enviar mensaje
+          </button>
+
+          <!-- Status messages -->
+          <div id="success-msg" class="hidden bg-[#22C55E]/10 border border-[#22C55E]/20 rounded p-4 text-[#22C55E] text-sm">
+            ¡Mensaje enviado! Te contactamos en menos de 48 horas.
+          </div>
+          <div id="error-msg" class="hidden bg-[#EF4444]/10 border border-[#EF4444]/20 rounded p-4 text-[#EF4444] text-sm">
+            Hubo un error al enviar. Intentá de nuevo o escribinos por Instagram.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const successMsg = document.getElementById('success-msg')!;
+  const errorMsg = document.getElementById('error-msg')!;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    successMsg.classList.add('hidden');
+    errorMsg.classList.add('hidden');
+
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      gym: (form.elements.namedItem('gym') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      terms: (form.elements.namedItem('terms') as HTMLInputElement).checked,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        successMsg.classList.remove('hidden');
+        form.reset();
+      } else {
+        errorMsg.classList.remove('hidden');
+      }
+    } catch {
+      errorMsg.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mensaje';
+    }
+  });
+</script>

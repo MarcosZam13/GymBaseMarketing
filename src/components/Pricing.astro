@@ -1,0 +1,105 @@
+---
+const gymFeatures = [
+  'Miembros ilimitados',
+  'Gestión de pagos y membresías',
+  'Rutinas personalizadas',
+  'Check-in digital por QR',
+  'Reportes y estadísticas',
+  'Soporte por WhatsApp',
+];
+
+const trainerFeatures = [
+  'Hasta 50 clientes',
+  'Gestión de rutinas',
+  'Control de pagos',
+  'Perfil de clientes',
+  'Soporte por WhatsApp',
+];
+---
+
+<section id="precios" class="py-24 border-t border-[#1f1f1f]">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="mb-16">
+      <p class="text-[#FF5E14] text-sm font-semibold uppercase tracking-widest mb-3">Precios</p>
+      <h2 class="font-heading font-black text-5xl md:text-6xl uppercase leading-tight max-w-xl">
+        Planes simples, sin sorpresas
+      </h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
+      <!-- Gimnasio (featured) -->
+      <div class="relative bg-[#111111] border border-[#FF5E14]/40 rounded-xl p-8">
+        <!-- Badge -->
+        <div class="absolute -top-3 left-8">
+          <span class="bg-[#FF5E14] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            Más popular
+          </span>
+        </div>
+
+        <div class="mb-6 pt-2">
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Gimnasio</h3>
+          <div class="flex items-baseline gap-1">
+            <span class="font-heading font-black text-5xl">₡50,000</span>
+            <span class="text-[#a0a0a0]">/mes</span>
+          </div>
+        </div>
+
+        <ul class="flex flex-col gap-3 mb-8">
+          {gymFeatures.map(f => (
+            <li class="flex items-center gap-3 text-sm">
+              <svg class="w-4 h-4 text-[#FF5E14] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="#contacto"
+          class="block text-center bg-[#FF5E14] hover:bg-[#e54d0a] text-white font-semibold py-3 rounded transition-colors"
+        >
+          Comenzar ahora
+        </a>
+      </div>
+
+      <!-- Entrenador Personal -->
+      <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-8">
+        <div class="mb-6">
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Entrenador Personal</h3>
+          <div class="flex items-baseline gap-1">
+            <span class="font-heading font-black text-5xl">₡25,000</span>
+            <span class="text-[#a0a0a0]">/mes</span>
+          </div>
+        </div>
+
+        <ul class="flex flex-col gap-3 mb-8">
+          {trainerFeatures.map(f => (
+            <li class="flex items-center gap-3 text-sm">
+              <svg class="w-4 h-4 text-[#FF5E14] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="#contacto"
+          class="block text-center border border-[#1f1f1f] hover:border-[#FF5E14]/40 text-white font-semibold py-3 rounded transition-colors"
+        >
+          Comenzar ahora
+        </a>
+      </div>
+    </div>
+
+    <!-- Custom plan note -->
+    <p class="mt-8 text-[#a0a0a0] text-sm">
+      ¿Tenés varias sucursales?{' '}
+      <a href="#contacto" class="text-[#FF5E14] hover:underline">Contactanos</a>
+      {' '}para un plan personalizado.
+    </p>
+  </div>
+</section>

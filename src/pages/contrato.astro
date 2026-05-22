@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Contrato de Servicio — GymBase">
+  <Navbar />
+
+  <main class="pt-32 pb-24 min-h-screen">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="text-[#FF5E14] text-xs font-semibold uppercase tracking-widest mb-3">Legal</p>
+      <h1 class="font-heading font-black text-4xl md:text-5xl uppercase mb-2">Contrato de Prestación de Servicios</h1>
+      <p class="text-[#a0a0a0] text-sm mb-10">Última actualización: 22/05/2026</p>
+
+      <div class="mb-10 bg-[#111111] border border-[#1f1f1f] rounded-xl p-6">
+        <h2 class="font-heading font-bold text-base uppercase mb-4 text-[#a0a0a0] tracking-wider">Partes</h2>
+        <p class="text-sm leading-relaxed mb-3">
+          <strong class="text-[#FF5E14]">PRESTADOR:</strong> Marcos Zamora Sánchez, mayor, costarricense, cédula de identidad número 2-0860-0414, en adelante "el Prestador".
+        </p>
+        <p class="text-sm leading-relaxed">
+          <strong class="text-[#FF5E14]">CLIENTE:</strong> La persona física o jurídica que completa el proceso de contratación en línea, en adelante "el Cliente".
+        </p>
+      </div>
+
+      {[
+        {
+          num: 'PRIMERA',
+          title: 'OBJETO',
+          body: 'El Prestador se compromete a brindar al Cliente acceso a la plataforma GymBase, un sistema de gestión para gimnasios y entrenadores personales disponible vía web, según el plan seleccionado.',
+        },
+        {
+          num: 'SEGUNDA',
+          title: 'VIGENCIA',
+          body: 'El presente contrato inicia en la fecha de activación del servicio y se renueva automáticamente cada mes calendario, salvo que alguna de las partes comunique su intención de no renovar con al menos 5 días hábiles de anticipación.',
+        },
+        {
+          num: 'TERCERA',
+          title: 'PRECIO Y FORMA DE PAGO',
+          body: 'El Cliente pagará mensualmente el monto correspondiente al plan seleccionado:\n— Plan Gimnasio: ₡50,000 por mes\n— Plan Entrenador Personal: ₡25,000 por mes\nEl pago se realizará mediante el método acordado entre las partes antes de la activación del servicio.',
+        },
+        {
+          num: 'CUARTA',
+          title: 'OBLIGACIONES DEL PRESTADOR',
+          body: 'a) Mantener el servicio disponible y funcional.\nb) Brindar soporte técnico en horario hábil.\nc) Notificar con anticipación cualquier mantenimiento programado.\nd) Resguardar la confidencialidad de los datos del Cliente.',
+        },
+        {
+          num: 'QUINTA',
+          title: 'OBLIGACIONES DEL CLIENTE',
+          body: 'a) Realizar los pagos en las fechas acordadas.\nb) Utilizar el servicio conforme a su propósito legítimo.\nc) No compartir credenciales de acceso con personas no autorizadas.\nd) Proporcionar información veraz durante el proceso de registro.',
+        },
+        {
+          num: 'SEXTA',
+          title: 'CONFIDENCIALIDAD',
+          body: 'Ambas partes se comprometen a mantener confidencial cualquier información sensible a la que tengan acceso en virtud del presente contrato.',
+        },
+        {
+          num: 'SÉPTIMA',
+          title: 'RESCISIÓN',
+          body: 'Cualquiera de las partes podrá rescindir el presente contrato mediante aviso escrito. El Cliente no tendrá derecho a reembolso por el período ya pagado. El Prestador podrá suspender el servicio de forma inmediata ante incumplimiento de pago o uso indebido de la plataforma.',
+        },
+        {
+          num: 'OCTAVA',
+          title: 'LEGISLACIÓN Y JURISDICCIÓN',
+          body: 'El presente contrato se rige por las leyes de la República de Costa Rica. Para cualquier controversia, las partes se someten a la jurisdicción de los Tribunales de Justicia de Costa Rica.',
+        },
+      ].map(clause => (
+        <div class="mb-8 border-l-2 border-[#1f1f1f] pl-6">
+          <h2 class="font-heading font-bold text-lg uppercase mb-2">
+            CLÁUSULA {clause.num} — {clause.title}
+          </h2>
+          <p class="text-[#a0a0a0] text-sm leading-relaxed whitespace-pre-line">{clause.body}</p>
+        </div>
+      ))}
+
+      <div class="mt-12 bg-[#FF5E14]/10 border border-[#FF5E14]/20 rounded-xl p-6">
+        <h2 class="font-heading font-bold text-lg uppercase mb-3 text-[#FF5E14]">Aceptación electrónica</h2>
+        <p class="text-sm text-[#a0a0a0] leading-relaxed">
+          Al marcar la casilla de aceptación en el formulario de contacto de gymbase.fit, el Cliente declara haber leído, comprendido y aceptado íntegramente el presente contrato, los Términos y Condiciones y la Política de Privacidad. Dicha aceptación tiene plena validez jurídica conforme a la Ley N° 8454 de Certificados, Firmas Digitales y Documentos Electrónicos de Costa Rica.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

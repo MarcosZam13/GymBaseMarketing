@@ -1,0 +1,62 @@
+---
+const faqs = [
+  {
+    q: '¿Necesito instalar algo?',
+    a: 'No. GymBase funciona completamente en el navegador desde cualquier dispositivo con internet. Solo necesitás una cuenta.',
+  },
+  {
+    q: '¿Mis datos están seguros?',
+    a: 'Sí. Toda la información se almacena con encriptación de nivel empresarial en servidores seguros. Tus datos son tuyos.',
+  },
+  {
+    q: '¿Puedo probar antes de pagar?',
+    a: 'Sí. Te mostramos una demo en vivo del sistema sin ningún costo ni compromiso.',
+  },
+  {
+    q: '¿Qué pasa si cancelo?',
+    a: 'Podés cancelar en cualquier momento. No hay contratos de permanencia mínima ni penalidades.',
+  },
+  {
+    q: '¿Cuánto tiempo tarda la configuración inicial?',
+    a: 'Menos de 48 horas después de que nos proporcionés la información de tu gimnasio. Nosotros nos encargamos de todo, incluyendo la personalización de colores y marca.',
+  },
+  {
+    q: '¿Tienen soporte técnico?',
+    a: 'Sí, soporte directo por WhatsApp en horario hábil. Respondemos rápido y en español.',
+  },
+];
+---
+
+<section id="faq" class="py-24 border-t border-[#1f1f1f]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16">
+      <!-- Left -->
+      <div>
+        <p class="text-[#FF5E14] text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>
+        <h2 class="font-heading font-black text-5xl md:text-6xl uppercase leading-tight">
+          Preguntas<br />frecuentes
+        </h2>
+        <p class="text-[#a0a0a0] mt-6 leading-relaxed">
+          ¿No encontrás lo que buscás? <a href="#contacto" class="text-[#FF5E14] hover:underline">Contactanos</a> y te respondemos.
+        </p>
+      </div>
+
+      <!-- Right: accordion -->
+      <div class="flex flex-col divide-y divide-[#1f1f1f]">
+        {faqs.map((faq, i) => (
+          <details class="group py-5">
+            <summary class="flex items-center justify-between cursor-pointer list-none gap-4">
+              <span class="font-semibold text-sm md:text-base">{faq.q}</span>
+              <span class="flex-shrink-0 w-5 h-5 text-[#FF5E14] transition-transform group-open:rotate-45">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </span>
+            </summary>
+            <p class="text-[#a0a0a0] text-sm leading-relaxed mt-3 pr-8">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
