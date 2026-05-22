@@ -1,5 +1,5 @@
 ---
-const tabs = ['Dashboard', 'Miembros', 'Pagos', 'Rutinas', 'Check-in', 'Reportes'];
+const tabs = ['Dashboard', 'Miembros', 'Pagos', 'Rutinas', 'Check-in', 'Reportes', 'Clases', 'Retos', 'Progreso', 'Tienda'];
 
 const sidebar = [
   { icon: '⊞', label: 'Dashboard', tab: 0 },
@@ -8,47 +8,51 @@ const sidebar = [
   { icon: '🏋️', label: 'Rutinas', tab: 3 },
   { icon: '✅', label: 'Check-in', tab: 4 },
   { icon: '📊', label: 'Reportes', tab: 5 },
+  { icon: '🗓️', label: 'Clases', tab: 6 },
+  { icon: '🏆', label: 'Retos', tab: 7 },
+  { icon: '📈', label: 'Progreso', tab: 8 },
+  { icon: '🛍️', label: 'Tienda', tab: 9 },
 ];
 
 const members = [
-  { name: 'Carlos Vega',    plan: 'Mensual',    status: 'Al día',  checkin: 'Hoy 7:14am',  vence: '15 jun',     amount: '₡25,000',  date: '1 may',  ok: true  },
-  { name: 'María Solís',    plan: 'Trimestral', status: 'Al día',  checkin: 'Hoy 6:52am',  vence: '1 ago',      amount: '₡65,000',  date: '1 may',  ok: true  },
-  { name: 'Andrés Mora',    plan: 'Mensual',    status: 'Vencido', checkin: 'Hace 4 días', vence: '18 may',     amount: '₡25,000',  date: '—',      ok: false },
-  { name: 'Sofía Castro',   plan: 'Mensual',    status: 'Al día',  checkin: 'Hoy 8:01am',  vence: '22 jun',     amount: '₡25,000',  date: '2 may',  ok: true  },
-  { name: 'Diego Araya',    plan: 'Anual',      status: 'Al día',  checkin: 'Ayer 5:45pm', vence: '1 ene 2027', amount: '₡240,000', date: '1 ene',  ok: true  },
-  { name: 'Laura Jiménez',  plan: 'Mensual',    status: 'Al día',  checkin: 'Hoy 9:20am',  vence: '30 jun',     amount: '₡25,000',  date: '3 may',  ok: true  },
-  { name: 'Felipe Rojas',   plan: 'Mensual',    status: 'Vencido', checkin: 'Hace 8 días', vence: '10 may',     amount: '₡25,000',  date: '—',      ok: false },
+  { name: 'Carlos Vega',   plan: 'Mensual',    status: 'Al día',  checkin: 'Hoy 7:14am',  vence: '15 jun',     amount: '₡25,000',  date: '1 may',  ok: true  },
+  { name: 'María Solís',   plan: 'Trimestral', status: 'Al día',  checkin: 'Hoy 6:52am',  vence: '1 ago',      amount: '₡65,000',  date: '1 may',  ok: true  },
+  { name: 'Andrés Mora',   plan: 'Mensual',    status: 'Vencido', checkin: 'Hace 4 días', vence: '18 may',     amount: '₡25,000',  date: '—',      ok: false },
+  { name: 'Sofía Castro',  plan: 'Mensual',    status: 'Al día',  checkin: 'Hoy 8:01am',  vence: '22 jun',     amount: '₡25,000',  date: '2 may',  ok: true  },
+  { name: 'Diego Araya',   plan: 'Anual',      status: 'Al día',  checkin: 'Ayer 5:45pm', vence: '1 ene 2027', amount: '₡240,000', date: '1 ene',  ok: true  },
+  { name: 'Laura Jiménez', plan: 'Mensual',    status: 'Al día',  checkin: 'Hoy 9:20am',  vence: '30 jun',     amount: '₡25,000',  date: '3 may',  ok: true  },
+  { name: 'Felipe Rojas',  plan: 'Mensual',    status: 'Vencido', checkin: 'Hace 8 días', vence: '10 may',     amount: '₡25,000',  date: '—',      ok: false },
 ];
 
 const days = [
   {
     label: 'Día 1 · Pecho',
     exercises: [
-      { name: 'Press de banca', sets: 4, reps: '8',  rest: '90s', muscle: 'Pecho'    },
-      { name: 'Aperturas',      sets: 3, reps: '12', rest: '60s', muscle: 'Pecho'    },
-      { name: 'Press inclinado',sets: 3, reps: '10', rest: '75s', muscle: 'Pecho'    },
-      { name: 'Fondos',         sets: 3, reps: '10', rest: '60s', muscle: 'Tríceps'  },
-      { name: 'Press militar',  sets: 3, reps: '10', rest: '60s', muscle: 'Hombros'  },
+      { name: 'Press de banca',  sets: 4, reps: '8',   rest: '90s',  muscle: 'Pecho'   },
+      { name: 'Aperturas',       sets: 3, reps: '12',  rest: '60s',  muscle: 'Pecho'   },
+      { name: 'Press inclinado', sets: 3, reps: '10',  rest: '75s',  muscle: 'Pecho'   },
+      { name: 'Fondos',          sets: 3, reps: '10',  rest: '60s',  muscle: 'Tríceps' },
+      { name: 'Press militar',   sets: 3, reps: '10',  rest: '60s',  muscle: 'Hombros' },
     ],
   },
   {
     label: 'Día 2 · Espalda',
     exercises: [
-      { name: 'Peso muerto',     sets: 4, reps: '6',  rest: '120s', muscle: 'Espalda' },
-      { name: 'Jalones al pecho',sets: 3, reps: '10', rest: '75s',  muscle: 'Espalda' },
-      { name: 'Remo con barra',  sets: 3, reps: '10', rest: '75s',  muscle: 'Espalda' },
-      { name: 'Curl de bíceps',  sets: 3, reps: '12', rest: '60s',  muscle: 'Bíceps'  },
-      { name: 'Curl martillo',   sets: 3, reps: '12', rest: '60s',  muscle: 'Bíceps'  },
+      { name: 'Peso muerto',      sets: 4, reps: '6',  rest: '120s', muscle: 'Espalda' },
+      { name: 'Jalones al pecho', sets: 3, reps: '10', rest: '75s',  muscle: 'Espalda' },
+      { name: 'Remo con barra',   sets: 3, reps: '10', rest: '75s',  muscle: 'Espalda' },
+      { name: 'Curl de bíceps',   sets: 3, reps: '12', rest: '60s',  muscle: 'Bíceps'  },
+      { name: 'Curl martillo',    sets: 3, reps: '12', rest: '60s',  muscle: 'Bíceps'  },
     ],
   },
   {
     label: 'Día 3 · Piernas',
     exercises: [
-      { name: 'Sentadilla',      sets: 4, reps: '10', rest: '90s', muscle: 'Piernas'  },
-      { name: 'Prensa',          sets: 3, reps: '12', rest: '75s', muscle: 'Piernas'  },
-      { name: 'Extensiones',     sets: 3, reps: '15', rest: '60s', muscle: 'Piernas'  },
-      { name: 'Curl femoral',    sets: 3, reps: '12', rest: '60s', muscle: 'Piernas'  },
-      { name: 'Plancha',         sets: 3, reps: '30s', rest: '45s', muscle: 'Core'    },
+      { name: 'Sentadilla',   sets: 4, reps: '10',  rest: '90s', muscle: 'Piernas' },
+      { name: 'Prensa',       sets: 3, reps: '12',  rest: '75s', muscle: 'Piernas' },
+      { name: 'Extensiones',  sets: 3, reps: '15',  rest: '60s', muscle: 'Piernas' },
+      { name: 'Curl femoral', sets: 3, reps: '12',  rest: '60s', muscle: 'Piernas' },
+      { name: 'Plancha',      sets: 3, reps: '30s', rest: '45s', muscle: 'Core'    },
     ],
   },
 ];
@@ -69,7 +73,6 @@ const checkins = [
   { name: 'Karla Núñez',   time: '06:02am', plan: 'Mensual',    ok: true  },
 ];
 
-// Bar chart data: last 6 months member count
 const growthData = [
   { month: 'Dic', count: 104 },
   { month: 'Ene', count: 115 },
@@ -94,7 +97,60 @@ function fmtColones(n: number) {
   if (n >= 1000000) return `₡${(n / 1000000).toFixed(1)}M`;
   return `₡${(n / 1000).toFixed(0)}K`;
 }
+
+// ── Engagement data ─────────────────────────────────────────────────────────
+
+const classes = [
+  { name: 'Spinning',         schedule: 'Lun · Mié · Vie — 6:00am', instructor: 'Coach Ana',   enrolled: 14, capacity: 20, color: '#A855F7' },
+  { name: 'CrossFit',         schedule: 'Mar · Jue — 7:00am',       instructor: 'Coach Rafa',  enrolled: 8,  capacity: 15, color: '#FF5E14' },
+  { name: 'Yoga Relajación',  schedule: 'Sáb — 8:00am',             instructor: 'Coach Laura', enrolled: 6,  capacity: 10, color: '#38BDF8' },
+  { name: 'Zumba',            schedule: 'Mié · Vie — 6:30pm',       instructor: 'Coach María', enrolled: 18, capacity: 25, color: '#22C55E' },
+];
+
+const retos = [
+  { title: 'Mayo Consistente', desc: '20 visitas en mayo',       participants: 18, days: 10, pct: 65,  color: '#FACC15', done: false },
+  { title: 'Pierde 5 kg',      desc: 'En 60 días',               participants: 12, days: 28, pct: 40,  color: '#EF4444', done: false },
+  { title: 'Plancha 3 min',    desc: 'Aguantá 3 min seguidos',   participants: 8,  days: 0,  pct: 100, color: '#22C55E', done: true  },
+];
+
+const leaderboard = [
+  { name: 'Carlos V.', value: '18 visitas', rank: 1 },
+  { name: 'María S.',  value: '16 visitas', rank: 2 },
+  { name: 'Sofía C.',  value: '15 visitas', rank: 3 },
+  { name: 'Diego A.',  value: '14 visitas', rank: 4 },
+  { name: 'Laura J.',  value: '13 visitas', rank: 5 },
+];
+
+const weightLost = [
+  { month: 'Dic', lost: 0   },
+  { month: 'Ene', lost: 1.5 },
+  { month: 'Feb', lost: 3   },
+  { month: 'Mar', lost: 4.5 },
+  { month: 'Abr', lost: 6   },
+  { month: 'May', lost: 7.5 },
+];
+const maxLost = 7.5;
+
+const measurements = [
+  { date: '22 may', weight: '78.5 kg', waist: '88 cm', chest: '102 cm' },
+  { date: '1 may',  weight: '80.0 kg', waist: '90 cm', chest: '101 cm' },
+  { date: '1 abr',  weight: '81.5 kg', waist: '92 cm', chest: '100 cm' },
+];
+
+const products = [
+  { name: 'Proteína Whey',  price: '₡18,500', stock: 24, tag: 'Suplem.',  color: '#38BDF8' },
+  { name: 'Camiseta Iron',  price: '₡8,000',  stock: 12, tag: 'Ropa',     color: '#A855F7' },
+  { name: 'BCAA Recovery',  price: '₡12,000', stock: 8,  tag: 'Suplem.',  color: '#38BDF8' },
+  { name: 'Pre-workout',    price: '₡14,500', stock: 6,  tag: 'Suplem.',  color: '#FACC15' },
+  { name: 'Shaker Premium', price: '₡5,500',  stock: 18, tag: 'Accesor.', color: '#22C55E' },
+  { name: 'Guantes Gym',    price: '₡7,000',  stock: 10, tag: 'Accesor.', color: '#22C55E' },
+];
 ---
+
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
 
 <div class="relative w-full max-w-2xl mx-auto lg:mx-0">
   <div class="absolute -inset-4 bg-[#FF5E14]/10 rounded-2xl blur-3xl pointer-events-none"></div>
@@ -103,21 +159,21 @@ function fmtColones(n: number) {
 
     <!-- Title bar -->
     <div class="flex items-center gap-2 px-4 py-3 border-b border-[#1f1f1f] bg-[#111111]">
-      <div class="w-3 h-3 rounded-full bg-[#EF4444]"></div>
-      <div class="w-3 h-3 rounded-full bg-[#FACC15]"></div>
-      <div class="w-3 h-3 rounded-full bg-[#22C55E]"></div>
-      <span class="ml-2 text-[10px] text-[#a0a0a0] font-mono hidden sm:block">gymbase.app</span>
-      <div class="ml-auto flex items-center gap-0.5">
+      <div class="w-3 h-3 rounded-full bg-[#EF4444] flex-shrink-0"></div>
+      <div class="w-3 h-3 rounded-full bg-[#FACC15] flex-shrink-0"></div>
+      <div class="w-3 h-3 rounded-full bg-[#22C55E] flex-shrink-0"></div>
+      <span class="ml-2 text-[10px] text-[#a0a0a0] font-mono hidden sm:block flex-shrink-0">gymbase.app</span>
+      <div class="ml-auto flex items-center gap-0.5 overflow-x-auto no-scrollbar">
         {tabs.map((tab, i) => (
           <button
             data-tab={i}
-            class={`mockup-tab text-[10px] px-2 py-1 rounded transition-colors whitespace-nowrap ${i === 0 ? 'bg-[#FF5E14]/20 text-[#FF5E14]' : 'text-[#a0a0a0] hover:text-white'}`}
+            class={`mockup-tab text-[10px] px-2 py-1 rounded transition-colors whitespace-nowrap flex-shrink-0 ${i === 0 ? 'bg-[#FF5E14]/20 text-[#FF5E14]' : 'text-[#a0a0a0] hover:text-white'}`}
           >{tab}</button>
         ))}
       </div>
     </div>
 
-    <div class="flex" style="min-height: 480px;">
+    <div class="flex" style="min-height: 500px;">
 
       <!-- Sidebar -->
       <aside class="w-12 md:w-44 border-r border-[#1f1f1f] bg-[#0a0a0a] py-4 flex-shrink-0">
@@ -140,8 +196,8 @@ function fmtColones(n: number) {
         </nav>
       </aside>
 
-      <!-- Main -->
-      <main class="flex-1 overflow-hidden">
+      <!-- Main content -->
+      <main class="flex-1 overflow-y-auto">
 
         <!-- 0: Dashboard -->
         <div data-panel="0" class="mockup-panel p-4">
@@ -275,13 +331,11 @@ function fmtColones(n: number) {
           </div>
         </div>
 
-        <!-- 3: Rutinas — estilo MyRoutineView -->
+        <!-- 3: Rutinas -->
         <div data-panel="3" class="mockup-panel hidden p-4">
-          <!-- Header card: igual a MyRoutineView -->
           <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-4 mb-3">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-start gap-3">
-                <!-- Dumbbell icon -->
                 <div class="w-9 h-9 rounded-xl bg-[#FF5E14]/10 border border-[#FF5E14]/20 flex items-center justify-center flex-shrink-0">
                   <svg class="w-4 h-4 text-[#FF5E14]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h2m14 0h2M7 12V9a1 1 0 011-1h1M7 12v3a1 1 0 001 1h1m4-4V9a1 1 0 011-1h1m-2 4v3a1 1 0 001 1h1"/>
@@ -308,7 +362,6 @@ function fmtColones(n: number) {
               </div>
               <span class="px-2 py-0.5 rounded-full bg-[#22C55E]/10 border border-[#22C55E]/25 text-[9px] text-[#22C55E] font-semibold flex-shrink-0">Activa</span>
             </div>
-            <!-- Progress dots (days/week) — exactly like MyRoutineView -->
             <div class="mt-3 flex gap-1.5">
               {[0,1,2].map(i => (
                 <div class={`flex-1 h-1.5 rounded-full ${i === 0 ? 'bg-[#FF5E14]' : 'bg-[#1f1f1f]'}`}></div>
@@ -316,8 +369,7 @@ function fmtColones(n: number) {
             </div>
           </div>
 
-          <!-- Day selector pills — horizontal, like MyRoutineView -->
-          <div class="flex gap-1.5 mb-3 overflow-x-auto pb-1">
+          <div class="flex gap-1.5 mb-3 overflow-x-auto pb-1 no-scrollbar">
             {days.map((day, i) => (
               <button
                 data-day-btn={i}
@@ -330,7 +382,6 @@ function fmtColones(n: number) {
             ))}
           </div>
 
-          <!-- Exercise list — divided rows, like MyRoutineView -->
           {days.map((day, di) => (
             <div
               data-day-panel={di}
@@ -345,9 +396,7 @@ function fmtColones(n: number) {
                   const color = muscleColors[ex.muscle] ?? '#a0a0a0';
                   return (
                     <div class="flex items-center gap-3 px-4 py-3 hover:bg-[#1a1a1a] transition-colors">
-                      <!-- Number badge -->
                       <div class="w-7 h-7 rounded-lg bg-[#1f1f1f] flex items-center justify-center text-[10px] font-bold text-[#a0a0a0] flex-shrink-0">{i + 1}</div>
-                      <!-- Info -->
                       <div class="flex-1 min-w-0">
                         <p class="font-medium text-xs text-white">{ex.name}</p>
                         <div class="flex items-center gap-3 mt-0.5">
@@ -361,7 +410,6 @@ function fmtColones(n: number) {
                           </span>
                         </div>
                       </div>
-                      <!-- Muscle badge -->
                       <span
                         class="px-2 py-0.5 rounded-full text-[9px] font-medium flex-shrink-0"
                         style={`background: ${color}18; color: ${color}; border: 0.5px solid ${color}40`}
@@ -435,14 +483,12 @@ function fmtColones(n: number) {
               <span class="text-[10px] text-[#a0a0a0]">Dic 2025 – May 2026</span>
             </div>
           </div>
-
-          <!-- Top stats -->
           <div class="grid grid-cols-4 gap-2 mb-3">
             {[
-              { label: 'Miembros', value: '147', delta: '+43', up: true },
-              { label: 'Ingresos', value: '₡2.35M', delta: '+27%', up: true },
-              { label: 'Check-ins', value: '856', delta: '+18%', up: true },
-              { label: 'Bajas', value: '12', delta: '-3', up: false },
+              { label: 'Miembros', value: '147',    delta: '+43',  up: true  },
+              { label: 'Ingresos', value: '₡2.35M', delta: '+27%', up: true  },
+              { label: 'Check-ins',value: '856',    delta: '+18%', up: true  },
+              { label: 'Bajas',    value: '12',     delta: '-3',   up: false },
             ].map(s => (
               <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-2.5">
                 <p class="text-[#a0a0a0] text-[9px] uppercase tracking-wider mb-1">{s.label}</p>
@@ -451,8 +497,6 @@ function fmtColones(n: number) {
               </div>
             ))}
           </div>
-
-          <!-- Member growth chart -->
           <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-3 mb-3">
             <div class="flex items-center justify-between mb-3">
               <p class="text-[10px] font-semibold uppercase tracking-wider text-[#a0a0a0]">Crecimiento de miembros</p>
@@ -465,18 +509,13 @@ function fmtColones(n: number) {
                 return (
                   <div class="flex-1 flex flex-col items-center gap-1">
                     <span class="text-[8px] text-[#a0a0a0]">{d.count}</span>
-                    <div
-                      class={`w-full rounded-t transition-all ${isLast ? 'bg-[#FF5E14]' : 'bg-[#FF5E14]/30'}`}
-                      style={`height: ${pct}%`}
-                    ></div>
+                    <div class={`w-full rounded-t transition-all ${isLast ? 'bg-[#FF5E14]' : 'bg-[#FF5E14]/30'}`} style={`height: ${pct}%`}></div>
                     <span class="text-[8px] text-[#a0a0a0]">{d.month}</span>
                   </div>
                 );
               })}
             </div>
           </div>
-
-          <!-- Revenue chart -->
           <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-3">
             <div class="flex items-center justify-between mb-3">
               <p class="text-[10px] font-semibold uppercase tracking-wider text-[#a0a0a0]">Ingresos mensuales</p>
@@ -489,15 +528,194 @@ function fmtColones(n: number) {
                 return (
                   <div class="flex-1 flex flex-col items-center gap-1">
                     <span class="text-[8px] text-[#a0a0a0]">{fmtColones(d.amount)}</span>
-                    <div
-                      class={`w-full rounded-t ${isLast ? 'bg-[#22C55E]' : 'bg-[#22C55E]/30'}`}
-                      style={`height: ${pct}%`}
-                    ></div>
+                    <div class={`w-full rounded-t ${isLast ? 'bg-[#22C55E]' : 'bg-[#22C55E]/30'}`} style={`height: ${pct}%`}></div>
                     <span class="text-[8px] text-[#a0a0a0]">{d.month}</span>
                   </div>
                 );
               })}
             </div>
+          </div>
+        </div>
+
+        <!-- 6: Clases -->
+        <div data-panel="6" class="mockup-panel hidden p-4">
+          <div class="mb-3 flex items-center justify-between">
+            <div>
+              <h2 class="font-heading font-bold text-sm uppercase tracking-wide">Clases</h2>
+              <p class="text-[#a0a0a0] text-[10px]">Semana 19–25 mayo · 4 clases activas</p>
+            </div>
+            <button class="bg-[#FF5E14] text-white text-[10px] font-semibold px-3 py-1.5 rounded">+ Crear clase</button>
+          </div>
+          <div class="space-y-2.5">
+            {classes.map(c => (
+              <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-3">
+                <div class="flex items-start justify-between mb-2.5">
+                  <div>
+                    <p class="font-semibold text-xs">{c.name}</p>
+                    <p class="text-[#a0a0a0] text-[10px] mt-0.5">{c.schedule}</p>
+                    <p class="text-[#a0a0a0] text-[9px]">Instructor: {c.instructor}</p>
+                  </div>
+                  <span
+                    class="text-[9px] px-2 py-0.5 rounded-full font-semibold flex-shrink-0"
+                    style={`background: ${c.color}15; color: ${c.color}`}
+                  >{c.enrolled}/{c.capacity}</span>
+                </div>
+                <div class="h-1 bg-[#1f1f1f] rounded-full overflow-hidden">
+                  <div
+                    class="h-full rounded-full transition-all"
+                    style={`width: ${Math.round(c.enrolled / c.capacity * 100)}%; background: ${c.color}`}
+                  ></div>
+                </div>
+                <p class="text-[9px] text-[#a0a0a0] mt-1">{c.capacity - c.enrolled} cupos disponibles</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- 7: Retos -->
+        <div data-panel="7" class="mockup-panel hidden p-4">
+          <div class="mb-3 flex items-center justify-between">
+            <div>
+              <h2 class="font-heading font-bold text-sm uppercase tracking-wide">Retos</h2>
+              <p class="text-[#a0a0a0] text-[10px]">2 activos · 1 completado</p>
+            </div>
+            <button class="bg-[#FF5E14] text-white text-[10px] font-semibold px-3 py-1.5 rounded">+ Crear reto</button>
+          </div>
+          <div class="space-y-2 mb-3">
+            {retos.map(r => (
+              <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-3">
+                <div class="flex items-start justify-between mb-2">
+                  <div>
+                    <p class="font-semibold text-xs">{r.title}</p>
+                    <p class="text-[#a0a0a0] text-[10px]">{r.desc} · {r.participants} participantes</p>
+                  </div>
+                  {r.done
+                    ? <span class="text-[9px] bg-[#22C55E]/15 text-[#22C55E] px-2 py-0.5 rounded-full font-semibold">Completado</span>
+                    : <span class="text-[9px] text-[#a0a0a0]">{r.days} días restantes</span>
+                  }
+                </div>
+                <div class="h-1 bg-[#1f1f1f] rounded-full overflow-hidden">
+                  <div class="h-full rounded-full" style={`width: ${r.pct}%; background: ${r.color}`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden">
+            <div class="px-3 py-2 border-b border-[#1f1f1f] flex items-center justify-between">
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-[#a0a0a0]">Ranking — Mayo Consistente</span>
+              <span class="text-[#FACC15] text-[9px]">🏆 Top 5</span>
+            </div>
+            <div class="divide-y divide-[#1f1f1f]/60">
+              {leaderboard.map(l => (
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <span class={`w-5 h-5 rounded flex items-center justify-center text-[10px] font-bold flex-shrink-0 ${l.rank === 1 ? 'bg-[#FACC15]/20 text-[#FACC15]' : l.rank === 2 ? 'bg-[#a0a0a0]/20 text-[#a0a0a0]' : 'bg-[#1f1f1f] text-[#a0a0a0]'}`}>{l.rank}</span>
+                  <span class="flex-1 text-xs font-medium">{l.name}</span>
+                  <span class="text-[#a0a0a0] text-[10px]">{l.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- 8: Progreso -->
+        <div data-panel="8" class="mockup-panel hidden p-4">
+          <div class="mb-3 flex items-center justify-between">
+            <h2 class="font-heading font-bold text-sm uppercase tracking-wide">Progreso</h2>
+            <span class="text-[10px] text-[#a0a0a0]">Últimos 6 meses</span>
+          </div>
+          <!-- Member selector -->
+          <div class="flex items-center gap-2 mb-3 bg-[#111111] border border-[#1f1f1f] rounded-lg px-3 py-2">
+            <div class="w-6 h-6 rounded-full bg-[#FF5E14]/20 flex items-center justify-center text-[9px] font-bold text-[#FF5E14] flex-shrink-0">CV</div>
+            <span class="text-xs font-medium flex-1">Carlos Vega</span>
+            <svg class="w-3 h-3 text-[#a0a0a0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-2 mb-3">
+            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-2.5 text-center">
+              <p class="text-[#a0a0a0] text-[9px] mb-1">Peso actual</p>
+              <p class="font-heading font-bold text-base">78.5 kg</p>
+              <p class="text-[#22C55E] text-[9px]">-7.5 kg</p>
+            </div>
+            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-2.5 text-center">
+              <p class="text-[#a0a0a0] text-[9px] mb-1">% Músculo</p>
+              <p class="font-heading font-bold text-base">37%</p>
+              <p class="text-[#22C55E] text-[9px]">+3 pp</p>
+            </div>
+            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-2.5 text-center">
+              <p class="text-[#a0a0a0] text-[9px] mb-1">IMC</p>
+              <p class="font-heading font-bold text-base">26.2</p>
+              <p class="text-[#22C55E] text-[9px]">-1.2</p>
+            </div>
+          </div>
+          <!-- Weight lost chart -->
+          <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-3 mb-3">
+            <div class="flex items-center justify-between mb-3">
+              <p class="text-[10px] font-semibold uppercase tracking-wider text-[#a0a0a0]">Peso perdido (kg)</p>
+              <span class="text-[9px] text-[#22C55E] font-semibold">-7.5 kg en 6 meses</span>
+            </div>
+            <div class="flex items-end gap-1.5 h-16">
+              {weightLost.map((d, i) => {
+                const pct = maxLost > 0 ? Math.max(Math.round((d.lost / maxLost) * 100), 4) : 4;
+                const isLast = i === weightLost.length - 1;
+                return (
+                  <div class="flex-1 flex flex-col items-center gap-1">
+                    <span class="text-[8px] text-[#a0a0a0]">{d.lost > 0 ? `-${d.lost}` : '—'}</span>
+                    <div class={`w-full rounded-t ${isLast ? 'bg-[#38BDF8]' : 'bg-[#38BDF8]/30'}`} style={`height: ${pct}%`}></div>
+                    <span class="text-[8px] text-[#a0a0a0]">{d.month}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <!-- Measurements -->
+          <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden">
+            <div class="px-3 py-2 border-b border-[#1f1f1f]">
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-[#a0a0a0]">Medidas recientes</span>
+            </div>
+            <table class="w-full">
+              <thead><tr class="border-b border-[#1f1f1f]">
+                <th class="text-left px-3 py-1.5 text-[#a0a0a0] font-medium text-[9px]">Fecha</th>
+                <th class="text-left px-3 py-1.5 text-[#a0a0a0] font-medium text-[9px]">Peso</th>
+                <th class="text-left px-3 py-1.5 text-[#a0a0a0] font-medium text-[9px] hidden md:table-cell">Cintura</th>
+                <th class="text-left px-3 py-1.5 text-[#a0a0a0] font-medium text-[9px] hidden md:table-cell">Pecho</th>
+              </tr></thead>
+              <tbody>
+                {measurements.map(m => (
+                  <tr class="border-b border-[#1f1f1f]/50">
+                    <td class="px-3 py-1.5 text-[#a0a0a0] text-[10px]">{m.date}</td>
+                    <td class="px-3 py-1.5 font-medium text-[10px]">{m.weight}</td>
+                    <td class="px-3 py-1.5 text-[#a0a0a0] text-[10px] hidden md:table-cell">{m.waist}</td>
+                    <td class="px-3 py-1.5 text-[#a0a0a0] text-[10px] hidden md:table-cell">{m.chest}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 9: Tienda -->
+        <div data-panel="9" class="mockup-panel hidden p-4">
+          <div class="mb-3 flex items-center justify-between">
+            <div>
+              <h2 class="font-heading font-bold text-sm uppercase tracking-wide">Tienda</h2>
+              <p class="text-[#a0a0a0] text-[10px]">6 productos · ₡54,000 vendidos este mes</p>
+            </div>
+            <button class="bg-[#FF5E14] text-white text-[10px] font-semibold px-3 py-1.5 rounded">+ Producto</button>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            {products.map(p => (
+              <div class="bg-[#111111] border border-[#1f1f1f] rounded-xl p-3 hover:bg-[#1a1a1a] transition-colors group cursor-pointer">
+                <span
+                  class="text-[9px] px-1.5 py-0.5 rounded font-medium"
+                  style={`background: ${p.color}15; color: ${p.color}`}
+                >{p.tag}</span>
+                <p class="font-semibold text-[11px] mt-2 mb-1 leading-tight group-hover:text-[#FF5E14] transition-colors">{p.name}</p>
+                <div class="flex items-center justify-between mt-2.5">
+                  <span class="font-heading font-bold text-sm text-[#FF5E14]">{p.price}</span>
+                  <span class="text-[9px] text-[#a0a0a0]">{p.stock} uds.</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -507,11 +725,11 @@ function fmtColones(n: number) {
 </div>
 
 <script>
-  const tabBtns      = document.querySelectorAll<HTMLButtonElement>('.mockup-tab');
-  const sidebarBtns  = document.querySelectorAll<HTMLButtonElement>('.sidebar-btn');
-  const panels       = document.querySelectorAll<HTMLElement>('.mockup-panel');
-  const dayBtns      = document.querySelectorAll<HTMLButtonElement>('.day-btn');
-  const dayPanels    = document.querySelectorAll<HTMLElement>('.routine-day-panel');
+  const tabBtns     = document.querySelectorAll<HTMLButtonElement>('.mockup-tab');
+  const sidebarBtns = document.querySelectorAll<HTMLButtonElement>('.sidebar-btn');
+  const panels      = document.querySelectorAll<HTMLElement>('.mockup-panel');
+  const dayBtns     = document.querySelectorAll<HTMLButtonElement>('.day-btn');
+  const dayPanels   = document.querySelectorAll<HTMLElement>('.routine-day-panel');
 
   function switchTab(index: number) {
     tabBtns.forEach((t, i) => {
