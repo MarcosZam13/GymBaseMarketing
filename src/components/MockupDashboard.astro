@@ -152,7 +152,7 @@ const products = [
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 
-<div class="relative w-full max-w-2xl mx-auto lg:mx-0">
+<div data-mockup-root class="relative w-full max-w-2xl mx-auto lg:mx-0">
   <div class="absolute -inset-4 bg-[#FF5E14]/10 rounded-2xl blur-3xl pointer-events-none"></div>
 
   <div class="relative rounded-xl border border-[#1f1f1f] bg-[#0d0d0d] overflow-hidden shadow-2xl">
@@ -725,43 +725,46 @@ const products = [
 </div>
 
 <script>
-  const tabBtns     = document.querySelectorAll<HTMLButtonElement>('.mockup-tab');
-  const sidebarBtns = document.querySelectorAll<HTMLButtonElement>('.sidebar-btn');
-  const panels      = document.querySelectorAll<HTMLElement>('.mockup-panel');
-  const dayBtns     = document.querySelectorAll<HTMLButtonElement>('.day-btn');
-  const dayPanels   = document.querySelectorAll<HTMLElement>('.routine-day-panel');
+  // Scope every mockup instance independently to avoid cross-instance interference
+  document.querySelectorAll<HTMLElement>('[data-mockup-root]').forEach(root => {
+    const tabBtns     = root.querySelectorAll<HTMLButtonElement>('.mockup-tab');
+    const sidebarBtns = root.querySelectorAll<HTMLButtonElement>('.sidebar-btn');
+    const panels      = root.querySelectorAll<HTMLElement>('.mockup-panel');
+    const dayBtns     = root.querySelectorAll<HTMLButtonElement>('.day-btn');
+    const dayPanels   = root.querySelectorAll<HTMLElement>('.routine-day-panel');
 
-  function switchTab(index: number) {
-    tabBtns.forEach((t, i) => {
-      t.classList.toggle('bg-[#FF5E14]/20', i === index);
-      t.classList.toggle('text-[#FF5E14]', i === index);
-      t.classList.toggle('text-[#a0a0a0]', i !== index);
-    });
-    sidebarBtns.forEach(btn => {
+    function switchTab(index: number) {
+      tabBtns.forEach((t, i) => {
+        t.classList.toggle('bg-[#FF5E14]/20', i === index);
+        t.classList.toggle('text-[#FF5E14]', i === index);
+        t.classList.toggle('text-[#a0a0a0]', i !== index);
+      });
+      sidebarBtns.forEach(btn => {
+        const ti = parseInt(btn.dataset.sidebarTab ?? '-1');
+        btn.classList.toggle('bg-[#FF5E14]/15', ti === index);
+        btn.classList.toggle('text-[#FF5E14]', ti === index);
+        btn.classList.toggle('text-[#a0a0a0]', ti !== index);
+      });
+      panels.forEach((p, i) => p.classList.toggle('hidden', i !== index));
+    }
+
+    function switchDay(index: number) {
+      dayBtns.forEach((b, i) => {
+        b.classList.toggle('bg-[#FF5E14]/10', i === index);
+        b.classList.toggle('border-[#FF5E14]', i === index);
+        b.classList.toggle('text-[#FF5E14]', i === index);
+        b.classList.toggle('bg-[#111111]', i !== index);
+        b.classList.toggle('border-[#1f1f1f]', i !== index);
+        b.classList.toggle('text-[#a0a0a0]', i !== index);
+      });
+      dayPanels.forEach((p, i) => p.classList.toggle('hidden', i !== index));
+    }
+
+    tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(parseInt(btn.dataset.tab!))));
+    sidebarBtns.forEach(btn => btn.addEventListener('click', () => {
       const ti = parseInt(btn.dataset.sidebarTab ?? '-1');
-      btn.classList.toggle('bg-[#FF5E14]/15', ti === index);
-      btn.classList.toggle('text-[#FF5E14]', ti === index);
-      btn.classList.toggle('text-[#a0a0a0]', ti !== index);
-    });
-    panels.forEach((p, i) => p.classList.toggle('hidden', i !== index));
-  }
-
-  function switchDay(index: number) {
-    dayBtns.forEach((b, i) => {
-      b.classList.toggle('bg-[#FF5E14]/10', i === index);
-      b.classList.toggle('border-[#FF5E14]', i === index);
-      b.classList.toggle('text-[#FF5E14]', i === index);
-      b.classList.toggle('bg-[#111111]', i !== index);
-      b.classList.toggle('border-[#1f1f1f]', i !== index);
-      b.classList.toggle('text-[#a0a0a0]', i !== index);
-    });
-    dayPanels.forEach((p, i) => p.classList.toggle('hidden', i !== index));
-  }
-
-  tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(parseInt(btn.dataset.tab!))));
-  sidebarBtns.forEach(btn => btn.addEventListener('click', () => {
-    const ti = parseInt(btn.dataset.sidebarTab ?? '-1');
-    if (ti >= 0) switchTab(ti);
-  }));
-  dayBtns.forEach(btn => btn.addEventListener('click', () => switchDay(parseInt(btn.dataset.dayBtn!))));
+      if (ti >= 0) switchTab(ti);
+    }));
+    dayBtns.forEach(btn => btn.addEventListener('click', () => switchDay(parseInt(btn.dataset.dayBtn!))));
+  });
 </script>
