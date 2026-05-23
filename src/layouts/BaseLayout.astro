@@ -20,7 +20,18 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
 
-    <!-- Favicon placeholder -->
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.gymbase.fit/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <!-- og:image: add a 1200×630 PNG to /public/og-image.png for WhatsApp/social previews -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Google Fonts -->

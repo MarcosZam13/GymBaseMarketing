@@ -2,16 +2,16 @@
 const tabs = ['Dashboard', 'Miembros', 'Pagos', 'Rutinas', 'Check-in', 'Reportes', 'Clases', 'Retos', 'Progreso', 'Tienda'];
 
 const sidebar = [
-  { icon: '⊞', label: 'Dashboard', tab: 0 },
-  { icon: '👥', label: 'Miembros', tab: 1 },
-  { icon: '💳', label: 'Pagos', tab: 2 },
-  { icon: '🏋️', label: 'Rutinas', tab: 3 },
-  { icon: '✅', label: 'Check-in', tab: 4 },
-  { icon: '📊', label: 'Reportes', tab: 5 },
-  { icon: '🗓️', label: 'Clases', tab: 6 },
-  { icon: '🏆', label: 'Retos', tab: 7 },
-  { icon: '📈', label: 'Progreso', tab: 8 },
-  { icon: '🛍️', label: 'Tienda', tab: 9 },
+  { icon: null, iconSvg: `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`, label: 'Dashboard', tab: 0 },
+  { icon: '👥', iconSvg: null, label: 'Miembros', tab: 1 },
+  { icon: '💳', iconSvg: null, label: 'Pagos', tab: 2 },
+  { icon: '🏋️', iconSvg: null, label: 'Rutinas', tab: 3 },
+  { icon: '✅', iconSvg: null, label: 'Check-in', tab: 4 },
+  { icon: '📊', iconSvg: null, label: 'Reportes', tab: 5 },
+  { icon: '🗓️', iconSvg: null, label: 'Clases', tab: 6 },
+  { icon: '🏆', iconSvg: null, label: 'Retos', tab: 7 },
+  { icon: '📈', iconSvg: null, label: 'Progreso', tab: 8 },
+  { icon: '🛍️', iconSvg: null, label: 'Tienda', tab: 9 },
 ];
 
 const members = [
@@ -219,7 +219,10 @@ const wLostPts  = svgPts(weightLost.map(d => d.lost));
                 item.tab === 0 ? 'bg-[#FF5E14]/15 text-[#FF5E14]' : 'text-[#a0a0a0] hover:text-white hover:bg-[#1f1f1f]'
               }`}
             >
-              <span class="text-sm flex-shrink-0">{item.icon}</span>
+              {item.iconSvg
+                ? <span class="w-3.5 h-3.5 flex-shrink-0 flex items-center justify-center" set:html={item.iconSvg}></span>
+                : <span class="text-sm flex-shrink-0">{item.icon}</span>
+              }
               <span class="hidden md:block text-xs font-medium">{item.label}</span>
             </button>
           ))}

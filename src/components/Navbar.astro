@@ -44,7 +44,7 @@
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-[#1f1f1f]">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[#1f1f1f] bg-[#080808]">
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
       <a href="/#caracteristicas" class="text-sm text-[#a0a0a0] hover:text-white transition-colors">Características</a>
       <a href="/#como-funciona" class="text-sm text-[#a0a0a0] hover:text-white transition-colors">Cómo funciona</a>
@@ -67,8 +67,9 @@
   const iconOpen = document.getElementById('icon-open')!;
   const iconClose = document.getElementById('icon-close')!;
 
-  // Scroll opacity
+  // Scroll opacity — don't change bg while mobile menu is open
   window.addEventListener('scroll', () => {
+    if (!mobileMenu.classList.contains('hidden')) return;
     if (window.scrollY > 20) {
       navbar.style.backgroundColor = 'rgba(8,8,8,0.95)';
       navbar.style.backdropFilter = 'blur(12px)';
@@ -86,6 +87,18 @@
     mobileMenu.classList.toggle('hidden', isOpen);
     iconOpen.classList.toggle('hidden', !isOpen);
     iconClose.classList.toggle('hidden', isOpen);
+
+    if (!isOpen) {
+      // Menu opening — force solid background regardless of scroll position
+      navbar.style.backgroundColor = 'rgba(8,8,8,0.98)';
+      navbar.style.backdropFilter = 'blur(12px)';
+      navbar.style.borderBottom = '1px solid #1f1f1f';
+    } else if (window.scrollY <= 20) {
+      // Menu closing and still at top — restore transparent
+      navbar.style.backgroundColor = 'transparent';
+      navbar.style.backdropFilter = 'none';
+      navbar.style.borderBottom = 'none';
+    }
   });
 
   // Close mobile menu on link click
