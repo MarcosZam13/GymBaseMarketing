@@ -203,7 +203,7 @@ const wLostPts  = svgPts(weightLost.map(d => d.lost));
       </div>
     </div>
 
-    <div class="flex" style="min-height: 500px;">
+    <div class="flex min-h-[340px] sm:min-h-[440px] md:min-h-[500px]">
 
       <!-- Sidebar -->
       <aside class="w-12 md:w-44 border-r border-[#1f1f1f] bg-[#0a0a0a] py-4 flex-shrink-0">
@@ -235,18 +235,18 @@ const wLostPts  = svgPts(weightLost.map(d => d.lost));
             <h2 class="font-heading font-bold text-sm uppercase tracking-wide">Panel de Control</h2>
             <p class="text-[#a0a0a0] text-[10px]">Viernes, 22 de mayo 2026</p>
           </div>
-          <div class="grid grid-cols-3 gap-2 mb-3">
-            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-3">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-3">
+            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-2 sm:p-3">
               <p class="text-[#a0a0a0] text-[9px] uppercase tracking-wider mb-1">Miembros activos</p>
               <p class="font-heading font-bold text-xl text-[#FF5E14]">147</p>
               <p class="text-[#22C55E] text-[9px] mt-1">+8 este mes</p>
             </div>
-            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-3">
+            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-2 sm:p-3">
               <p class="text-[#a0a0a0] text-[9px] uppercase tracking-wider mb-1">Pagos mayo</p>
               <p class="font-heading font-bold text-base leading-tight">₡2.35M</p>
               <p class="text-[#22C55E] text-[9px] mt-1">94% cobrado</p>
             </div>
-            <div class="bg-[#111111] border border-[#1f1f1f] rounded-lg p-3">
+            <div class="hidden sm:block bg-[#111111] border border-[#1f1f1f] rounded-lg p-3">
               <p class="text-[#a0a0a0] text-[9px] uppercase tracking-wider mb-1">Check-ins hoy</p>
               <p class="font-heading font-bold text-xl">34</p>
               <p class="text-[#a0a0a0] text-[9px] mt-1">Pico: 6–8am</p>
