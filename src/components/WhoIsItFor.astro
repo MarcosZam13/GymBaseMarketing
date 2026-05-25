@@ -1,0 +1,97 @@
+---
+const businesses = [
+  {
+    emoji: '🏋️',
+    title: 'Gimnasios',
+    desc: 'Controlá cientos de socios, membresías, pagos y asistencia sin papel ni planillas de Excel.',
+    tags: ['Miembros ilimitados', 'Control de pagos', 'Check-in por QR'],
+    color: '#FF5E14',
+  },
+  {
+    emoji: '🥊',
+    title: 'Boxes de CrossFit',
+    desc: 'Gestioná cupos por clase, WODs y la comunidad que hace especial a tu box.',
+    tags: ['Clases y horarios', 'Cupos por sesión', 'Retos de comunidad'],
+    color: '#A855F7',
+  },
+  {
+    emoji: '🥋',
+    title: 'Artes Marciales',
+    desc: 'Administrá rangos, pagos y el progreso de tus estudiantes en un solo panel.',
+    tags: ['Seguimiento por nivel', 'Gestión de pagos', 'Rutinas personalizadas'],
+    color: '#38BDF8',
+  },
+  {
+    emoji: '👤',
+    title: 'Entrenadores Personales',
+    desc: 'Llevá el control de tus clientes, rutinas y cobros de forma profesional y sin complicaciones.',
+    tags: ['Hasta 50 clientes', 'Rutinas por cliente', 'Control de cobros'],
+    color: '#22C55E',
+  },
+];
+---
+
+<section id="para-quien" class="py-24 border-t border-[#1f1f1f]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="mb-16">
+      <p class="text-[#FF5E14] text-sm font-semibold uppercase tracking-widest mb-3">Para quién es</p>
+      <h2 class="font-heading font-black text-5xl md:text-6xl uppercase leading-tight max-w-2xl">
+        Diseñado para cualquier negocio fitness
+      </h2>
+      <p class="text-[#a0a0a0] mt-4 leading-relaxed max-w-xl">
+        No importa si tenés un gimnasio clásico, un box de CrossFit o enseñás jiu-jitsu en tu academia — GymBase se adapta a tu negocio.
+      </p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {businesses.map(b => (
+        <div class="relative group overflow-hidden rounded-2xl border border-[#1f1f1f] bg-[#111111] p-7 transition-all duration-300 hover:border-opacity-60"
+             style={`--accent: ${b.color}`}>
+
+          <!-- Top accent line -->
+          <div class="absolute inset-x-0 top-0 h-0.5 transition-opacity duration-300" style={`background: ${b.color}`}></div>
+
+          <!-- Hover glow -->
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"
+            style={`background: radial-gradient(ellipse at 10% 10%, ${b.color}12 0%, transparent 70%)`}
+          ></div>
+
+          <!-- Emoji -->
+          <div class="relative z-10 text-4xl mb-5">{b.emoji}</div>
+
+          <!-- Title -->
+          <h3 class="relative z-10 font-heading font-bold text-xl uppercase mb-3 group-hover:transition-colors" style={`color: ${b.color}`}>
+            {b.title}
+          </h3>
+
+          <!-- Description -->
+          <p class="relative z-10 text-[#a0a0a0] text-sm leading-relaxed mb-5">
+            {b.desc}
+          </p>
+
+          <!-- Tags -->
+          <ul class="relative z-10 flex flex-col gap-2">
+            {b.tags.map(tag => (
+              <li class="flex items-center gap-2.5 text-xs text-[#c0c0c0]">
+                <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style={`background: ${b.color}`}></div>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom note -->
+    <p class="mt-10 text-[#606060] text-sm text-center">
+      ¿Tu negocio es diferente?{' '}
+      <a href="#contacto" class="text-[#FF5E14] hover:underline">Contanos</a>
+      {' '}y lo adaptamos juntos.
+    </p>
+
+  </div>
+</section>
